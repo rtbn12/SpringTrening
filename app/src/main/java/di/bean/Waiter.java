@@ -1,11 +1,13 @@
 package di.bean;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Waiter {
 
-    private final Kitchen kitchen;
+//    @Autowired
+    private  Kitchen kitchen;
 
     public Waiter(Kitchen kitchen) {
         this.kitchen = kitchen;
@@ -15,4 +17,9 @@ public class Waiter {
         System.out.println("Waiter takes order: " + order);
         kitchen.cook(order);
     }
+
+//    @Autowired
+//    public void setKitchen(Kitchen kitchen) {
+//        this.kitchen = kitchen;
+//    }
 }

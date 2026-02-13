@@ -1,5 +1,6 @@
 package di;
 
+import di.bean.Customer;
 import di.config.configuration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -7,6 +8,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class CaffeApplication {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(configuration.class);
+
+        Customer customer = context.getBean("customer", Customer.class);
+        customer.makeOrder("Borsh");
 
 
     }
